@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="404: Página no encontrada | CronoTerrario">
+  <Navbar />
+
+  <main class="min-h-dvh flex items-center justify-center px-4 py-20">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 animate-float">
+        <img
+          src="CronoTerrario-hero.webp"
+          alt="CronoTerrario"
+          class="w-full h-full object-cover rounded-full shadow-2xl"
+        />
+        <div class="absolute inset-0 bg-black/10 rounded-full"></div>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-earth-900 mb-4">
+        ¡Ups! Parece que el tiempo se detuvo
+      </h1>
+
+      <p class="text-xl text-earth-700 mb-8">
+        Al igual que nuestros terrarios, a veces necesitamos un momento para reorientarnos. La
+        página que buscas se ha perdido en el tiempo.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="/"
+          class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-md font-medium transition-colors inline-flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Volver al inicio
+        </a>
+
+        <button
+          onclick="history.back()"
+          class="border-2 border-earth-300 hover:border-primary-500 text-earth-900 hover:text-primary-600 px-6 py-3 rounded-md font-medium transition-colors inline-flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"></path>
+          </svg>
+          Regresar
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+</style>
