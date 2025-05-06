@@ -1,0 +1,78 @@
+---
+---
+
+<div 
+  data-modal="price-modal" 
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden"
+>
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 overflow-hidden transform transition-all">
+    <div class="relative">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary-100 rounded-full opacity-70"></div>
+      <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-primary-200 rounded-full opacity-70"></div>
+      
+      <div class="relative p-6 md:p-8">
+        <button 
+          data-modal-close 
+          class="absolute top-4 right-4 text-earth-500 hover:text-earth-800 transition-colors"
+          aria-label="Cerrar modal"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        
+        <div class="text-center mb-6">
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-earth-900 mb-2">Tu CronoTerrario te espera</h2>
+          <p class="text-earth-700">Selecciona el tamaño que mejor se adapte a tu espacio</p>
+        </div>
+        
+        <div class="space-y-4 mb-8">
+          <div class="border border-earth-200 rounded-lg p-4 hover:border-primary-300 hover:bg-primary-50/50 transition-colors cursor-pointer">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="font-medium text-earth-900">Tamaño Pequeño</h3>
+                <p class="text-sm text-earth-600">Ideal para escritorios y espacios reducidos</p>
+              </div>
+              <span class="font-serif font-bold text-xl text-primary-700">COP $70.000</span>
+            </div>
+          </div>
+          
+          <div class="border-2 border-primary-300 rounded-lg p-4 bg-primary-50/50 relative">
+            <div class="absolute -top-3 -right-2 bg-primary-600 text-white text-xs px-2 py-1 rounded-full">Popular</div>
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="font-medium text-earth-900">Tamaño Mediano</h3>
+                <p class="text-sm text-earth-600">Perfecto para mesas y estantes</p>
+              </div>
+              <span class="font-serif font-bold text-xl text-primary-700">COP $100.000</span>
+            </div>
+          </div>
+          
+          <div class="border border-earth-200 rounded-lg p-4 hover:border-primary-300 hover:bg-primary-50/50 transition-colors cursor-pointer">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="font-medium text-earth-900">Tamaño Grande</h3>
+                <p class="text-sm text-earth-600">Impresionante para paredes y espacios amplios</p>
+              </div>
+              <span class="font-serif font-bold text-xl text-primary-700">COP $150.000</span>
+            </div>
+          </div>
+        </div>
+        
+        <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 group">
+          <span>Proceder al pago</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:translate-x-1 transition-transform">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        
+        <p class="text-center text-sm text-earth-500 mt-4">
+          Envío gratis a nivel nacional<br>
+          Garantía de 30 días de satisfacción
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

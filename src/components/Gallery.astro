@@ -1,0 +1,117 @@
+---
+
+const images = [
+  {
+    src: "CronoTerrario-promo1.webp",
+    alt: "CronoTerrario vista frontal",
+  },
+  {
+    src: "CronoTerrario-promo2.webp",
+    alt: "CronoTerrario ambiente de sala",
+  },
+  {
+    src: "CronoTerrario-promo3.webp",
+    alt: "CronoTerrario detalle de plantas",
+  },
+  {
+    src: "CronoTerrario-promo4.webp",
+    alt: "CronoTerrario detalle de plantas",
+  },
+  {
+    src: "CronoTerrario.webp",
+    alt: "CronoTerrario detalle de plantas",
+  },
+];
+---
+
+<section id="galeria" class="py-20 bg-earth-100/50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-earth-900 mb-4">
+        Explora el CronoTerrario
+      </h2>
+      <p class="text-lg text-earth-700 max-w-2xl mx-auto">
+        Cada CronoTerrario es una pieza única que combina artesanía, naturaleza y diseño. Descubre
+        las diferentes perspectivas de este fascinante microecosistema.
+      </p>
+    </div>
+
+    <div class="relative max-w-3xl mx-auto">
+      <div class="aspect-square bg-white rounded-xl shadow-lg overflow-hidden">
+        {
+          images.map((image, index) => (
+            <div
+              class={`h-full ${index === 0 ? "" : "hidden"}`}
+              data-gallery-item
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                class={`w-full h-full object-cover transition-transform`}
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <button
+        id="gallery-prev"
+        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-earth-800 hover:text-primary-600 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors z-10"
+        aria-label="Imagen anterior">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button
+        id="gallery-next"
+        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-earth-800 hover:text-primary-600 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors z-10"
+        aria-label="Imagen siguiente">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="text-center mt-8">
+      <button
+        class="bg-earth-800 hover:bg-earth-900 text-white px-6 py-3 rounded-md inline-flex items-center gap-2 transition-colors"
+        data-modal-trigger="price-modal">
+        <span>Lleva el tuyo ahora</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+---
+
+<section class="py-20 bg-gradient-to-b from-earth-50 to-primary-50/30">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-earth-900 mb-4">Explora en 3D</h2>
+      <p class="text-lg text-earth-700 max-w-2xl mx-auto">
+        Observa cada detalle del CronoTerrario desde todos los ángulos. 
+        Incluso puedes experimentar cómo se vería en tu espacio con realidad aumentada.
+      </p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto bg-white p-4 rounded-xl shadow-lg">
+      <!-- Note: In a real implementation, you would have the actual .glb file for the product -->
+      <model-viewer 
+        src="CronoTerrarioglb.glb" 
+        alt="CronoTerrario modelo 3D" 
+        ar 
+        ar-modes="scene-viewer webxr quick-look" 
+        camera-controls 
+        tone-mapping="neutral" 
+        shadow-intensity="1"
+        style="width: 100%; height: 400px; background-color: #f8f7f2; border-radius: 0.5rem;"
+      >
+        <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md shadow-sm transition-colors">
+          Ver en tu espacio
+        </button>
+        <div id="ar-prompt" class="hidden md:block">
+          <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="Instrucciones de AR">
+        </div>
+      </model-viewer>
+      
+      <p class="text-sm text-earth-500 text-center mt-4">
+        * El modelo 3D es una representación y puede variar ligeramente del producto final
+      </p>
+    </div>
+  </div>
+</section>

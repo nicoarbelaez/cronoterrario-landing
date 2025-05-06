@@ -1,0 +1,191 @@
+---
+const cards = [
+  {
+    title: "Un Mundo en Miniatura",
+    description:
+      "Un terrario es como una pequeña jungla contenida en vidrio, donde cada elemento juega un papel vital en este fascinante microecosistema.",
+    icon: /* Raw SVG string */ `
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 20h6"></path>
+        <path d="M12 4v16"></path>
+        <path d="M6.2 7c-.5 0-.9.4-.9.9v.2c0 1.3.6 2.5 1.6 3.4l.7.6c.3.3.6.7.6 1.1v.2c0 1.3.6 2.5 1.6 3.4l1.7 1.2"></path>
+        <path d="M17.8 7c.5 0 .9.4.9.9v.2c0 1.3-.6 2.5-1.6 3.4l-.7.6c-.3.3-.6.7-.6 1.1v.2c0 1.3-.6 2.5-1.6 3.4L12.5 18"></path>
+      </svg>`,
+    buttonText: "Leer más",
+  },
+  {
+    title: "Ciclo Vital",
+    description:
+      "Un sistema autosuficiente donde el agua mantiene un ciclo natural perfecto, creando un ambiente ideal para la vida vegetal.",
+    icon: `
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+        <path d="M6 12c0-1.7.7-3.2 1.8-4.2"></path>
+        <path d="M18 12c0 1.7-.7 3.2-1.8 4.2"></path>
+        <path d="M12 22V2"></path>
+        <path d="M12 12h9"></path>
+      </svg>`,
+    buttonText: "Leer más",
+  },
+  {
+    title: "¿Por qué Tener Uno?",
+    descriptionItems: [
+      "Reduce el estrés",
+      "Decoración única y viva",
+      "Herramienta educativa sobre ecosistemas",
+    ],
+    icon: `
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>`,
+    buttonText: "Ver todos los beneficios",
+  },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-earth-50 to-primary-50/30">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-earth-900 mb-4">
+        Descubre el Mundo de los Terrarios
+      </h2>
+      <p class="text-lg text-earth-700 max-w-2xl mx-auto">
+        Explora cómo estos pequeños ecosistemas crean un equilibrio perfecto entre naturaleza y
+        diseño, trayendo vida y belleza a cualquier espacio.
+      </p>
+    </div>
+
+    <!-- Desktop View -->
+    <div class="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {
+        cards.map((card) => (
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-primary-600 mb-6" set:html={card.icon} />
+            <h3 class="text-2xl font-serif font-bold text-earth-900 mb-4">{card.title}</h3>
+            {card.description && <p class="text-earth-700">{card.description}</p>}
+            {card.descriptionItems && (
+              <ul class="space-y-3 text-earth-700">
+                {card.descriptionItems.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary-600 mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <button class="mt-6 text-primary-600 font-medium flex items-center gap-1">
+              {card.buttonText}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Mobile Carousel -->
+    <div class="md:hidden">
+      <div class="swiper education-carousel">
+        <div class="swiper-wrapper">
+          {
+            cards.map((card) => (
+              <div class="swiper-slide p-4">
+                <div class="bg-white rounded-xl p-6 shadow-lg transform transition-transform">
+                  <div class="text-primary-600 mb-4" set:html={card.icon} />
+                  <h3 class="text-xl font-serif font-bold text-earth-900 mb-3">{card.title}</h3>
+                  {card.description && <p class="text-earth-700 text-sm">{card.description}</p>}
+                  {card.descriptionItems && (
+                    <ul class="space-y-2 text-earth-700 text-sm">
+                      {card.descriptionItems.map((item) => (
+                        <li class="flex items-start gap-2">
+                          <span class="text-primary-600 mt-1">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <button class="mt-4 text-primary-600 font-medium text-sm flex items-center gap-1">
+                    {card.buttonText}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .swiper {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+  .swiper-slide {
+    width: 280px;
+    height: auto;
+  }
+  :global(.swiper-pagination-bullet) {
+    background: theme("colors.primary.600");
+  }
+  :global(.swiper-pagination-bullet-active) {
+    background: theme("colors.primary.600");
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Pagination, EffectCards } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import "swiper/css/effect-cards";
+
+  new Swiper(".education-carousel", {
+    modules: [Pagination, EffectCards],
+    effect: "cards",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    initialSlide: 1,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    cardsEffect: {
+      perSlideOffset: 8,
+      perSlideRotate: 2,
+      rotate: true,
+      slideShadows: false, // ← Desactiva la sombra gris trasera
+    },
+  });
+</script>

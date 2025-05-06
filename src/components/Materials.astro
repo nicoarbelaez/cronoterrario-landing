@@ -1,0 +1,96 @@
+---
+interface Section {
+  title: string;
+  items: string[];
+}
+
+const materials: Section[] = [
+  {
+    title: "El contenedor",
+    items: [
+      "Marco de bronce envejecido resistente a la corrosión",
+      "Cristal de borosilicato de alta calidad",
+      "Sello hermético para conservar la humedad",
+      "Mecanismo de relojería suizo de precisión",
+    ],
+  },
+  {
+    title: "La vegetación",
+    items: [
+      "Musgo vivo cultivado en condiciones controladas",
+      "Micro plantas seleccionadas por su adaptabilidad",
+      "Variedades resistentes a la humedad y poca luz",
+      "Semillas de crecimiento lento para mantenimiento mínimo",
+    ],
+  },
+  {
+    title: "El sustrato",
+    items: [
+      "Sustrato especial para terrariums con filtración óptima",
+      "Carbón activado para prevenir hongos",
+      "Piedras decorativas de mármol y granito",
+      "Arena fina para drenaje y estética",
+    ],
+  },
+];
+
+const careGuide: Section = {
+  title: "Guía de cuidados mínimos",
+  items: [
+    "Ubicar en un espacio con luz indirecta, evitando la luz solar directa intensa",
+    "Añadir 2-3 gotas de agua cada 3-4 meses si notas el sustrato completamente seco",
+    "Limpiar el cristal exterior con un paño suave para mantener la visibilidad",
+    "Cambiar la pila del reloj una vez al año para mantener la precisión horaria",
+  ],
+};
+---
+
+<section id="materiales" class="py-20 bg-earth-800 text-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Materiales premium</h2>
+      <p class="text-lg text-earth-200 max-w-2xl mx-auto">
+        Cada CronoTerrario está fabricado con materiales cuidadosamente seleccionados para
+        garantizar durabilidad, estética y un ecosistema saludable.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {
+        materials.map(({ title, items }) => (
+          <div class="bg-earth-900/60 rounded-xl p-6 backdrop-blur-sm">
+            <h3 class="text-xl font-serif font-bold mb-4 text-primary-300">{title}</h3>
+            <ul class="space-y-3">
+              {items.map((item) => (
+                <li class="flex items-center gap-2">
+                  <span class="text-primary-300">&#9679;</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 bg-earth-900/60 rounded-xl p-6 max-w-3xl mx-auto backdrop-blur-sm">
+      <h3 class="text-xl font-serif font-bold mb-4 text-primary-300 text-center">
+        {careGuide.title}
+      </h3>
+      <p class="text-earth-200 mb-4">
+        Aunque el CronoTerrario está diseñado para ser autosuficiente, estos sencillos cuidados
+        maximizarán su belleza y longevidad:
+      </p>
+      <ul class="space-y-2">
+        {
+          careGuide.items.map((tip) => (
+            <li class="flex items-start gap-2">
+              <span class="text-primary-300 mt-1">&#9679;</span>
+              <span>{tip}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
