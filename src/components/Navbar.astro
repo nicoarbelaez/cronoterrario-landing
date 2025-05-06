@@ -19,7 +19,7 @@ const navbarLinks = [
     <nav class="hidden md:flex items-center space-x-8">
       {
         navbarLinks.map((link) => (
-          <a href={link.href} class="text-earth-900 hover:text-primary-600 transition-colors">
+          <a href={"/" + link.href} class="text-earth-900 hover:text-primary-600 transition-colors">
             {link.text}
           </a>
         ))

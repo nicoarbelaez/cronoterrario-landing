@@ -1,0 +1,42 @@
+---
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+import PriceModal from "../../components/PriceModal.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Presentación | CronoTerrario">
+  <Navbar />
+  <PriceModal />
+
+  <main class="container mx-auto px-4 py-20">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-serif font-bold text-earth-900 mb-8 text-center">
+        CronoTerrario Presentación
+      </h1>
+
+      <div
+        class="relative w-full rounded-lg shadow-lg overflow-hidden mb-8"
+        style="padding-top: 56.25%;">
+        <iframe
+          class="absolute top-0 left-0 w-full h-full"
+          src="https://www.canva.com/design/DAGmnqfS-O4/uKVvxB3zMwsdW9LUP1Fp8g/view?embed"
+          loading="lazy"
+          allowfullscreen
+          title="CronoTerrario Presentación"></iframe>
+      </div>
+
+      <div class="text-center">
+        <a
+          href="https://www.canva.com/design/DAGmnqfS-O4/uKVvxB3zMwsdW9LUP1Fp8g/view"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-md font-medium transition-colors">
+          Ver presentación completa
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
